@@ -1,114 +1,109 @@
-<<<<<<< HEAD
 =======
-<!--
-You are free to copy and use this sample in accordance with the terms of the
-Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
--->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>Google Earth API Sample</title>
-    <script src="//www.google.com/jsapi?key=ABQIAAAAuPsJpk3MBtDpJ4G8cqBnjRRaGTYH6UMl8mADNa0YKuWNNa8VNxQCzVBXTx2DYyXGsTOxpWhvIG7Djw" type="text/javascript"></script>
-    <script type="text/javascript">
-      function addSampleButton(caption, clickHandler) {
-        var btn = document.createElement('input');
-        btn.type = 'button';
-        btn.value = caption;
-        
-        if (btn.attachEvent)
-          btn.attachEvent('onclick', clickHandler);
-        else
-          btn.addEventListener('click', clickHandler, false);
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta charste ="utf-8">
+<title>My First Bitstarter</title>
+<link type="text/css" rel="stylesheet"
+      href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css">
+<style type="text/css">
+body{
+padding-top: 20px;
+padding-bottom: 40px;
+}
+.container{
+width: 960px;
+}
+p.lead{
+padding-top: 15px;
+}
+.navigation, .pitch, .section1, .section2, .faq, .footer{
+padding: 10px 0px 10px 0px;
+}
+.video, .thermometer, .order, .social{
+border: 1px dotted;
+text-align;: center;
+}
+.video{
+/* Internal borders have 1px width, thus need to add 4x1px to 120px. */
+height: 124px;
+line-height: 124px;
+}
+>>>>>>> develop
 
-        // add the button to the Sample UI
-        document.getElementById('sample-ui').appendChild(btn);
-      }
-      
-      function addSampleUIHtml(html) {
-        document.getElementById('sample-ui').innerHTML += html;
-      }
-    </script>
-    <script type="text/javascript">
-    var ge;
-    
-    google.load("earth", "1");
-    
-    function init() {
-      google.earth.createInstance('map3d', initCallback, failureCallback);
-    
-      addSampleButton('Create a 3D Model!', buttonClick);
-    }
-    
-    function initCallback(instance) {
-      ge = instance;
-      ge.getWindow().setVisibility(true);
-    
-      // add a navigation control
-      ge.getNavigationControl().setVisibility(ge.VISIBILITY_AUTO);
-    
-      // add some layers
-      ge.getLayerRoot().enableLayerById(ge.LAYER_BORDERS, true);
-      ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
-    
-      var la = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
-      la.setRange(100000);
-      ge.getView().setAbstractView(la);
-    
-      create3dModel();
-    
-      document.getElementById('installed-plugin-version').innerHTML =
-        ge.getPluginVersion().toString();
-    }
-    
-    function failureCallback(errorCode) {
-    }
-    
-    function create3dModel() {
-      // Create a 3D model, initialize it from a Collada file, and place it
-      // in the world.
-    
-      var placemark = ge.createPlacemark('');
-      placemark.setName('model');
-      var model = ge.createModel('');
-      ge.getFeatures().appendChild(placemark);
-      var loc = ge.createLocation('');
-      model.setLocation(loc);
-      var link = ge.createLink('');
-    
-      // A textured model created in Sketchup and exported as Collada.
-      link.setHref('https://dl.dropboxusercontent.com/u/41402096/Google%20Earth/Breezehouse_Cedar_Mirrored.dae');
-      model.setLink(link);
-    
-      var la = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
-      loc.setLatitude(la.getLatitude());
-      loc.setLongitude(la.getLongitude());
-    
-      placemark.setGeometry(model);
-    
-      la.setRange(300);
-      la.setTilt(45);
-      ge.getView().setAbstractView(la);
-    }
-    
-    function buttonClick() {
-      create3dModel();
-    }
-    
-    </script>
-  </head>
-  <body onload="init()" style="font-family: arial, sans-serif; font-size: 13px; border: 0;">
-    <div id="sample-ui"></div>
-    <div id="map3d" style="width: 500px; height: 380px;"></div>
-    <br>
-    <div>Installed Plugin Version: <span id="installed-plugin-version" style="font-weight: bold;">Loading...</span></div>
-  </body>
-<div>
-This is Mark's Google Earth App!
-</div> 
-
-<iframe width="640" height="1502" src="//www.youtube.com/embed/iSvpnycNCB4"frameborder="0" allowfullscreen>
-</iframe>
+.thermometer, .order, .social{
+/* line-height to vertically center: http://phrogz.net/css/vertical-align/index.html*/
+height: 40px;
+line-height: 40px;
+}
+div.row{
+border: 1px solid;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="row navigation">
+<div class="span2 logo">
+Logo
+</div>
+<div class = "span6 blank">
+Blank
+</div>
+<div class="span4 about">
+About
+</div>
+</div>
+<div class="row heading">
+<div class="span12">
+<h1>Bitstarter Title</h1>
+</div>
+</div>
+<div class="row subheading">
+>div class="span12">
+<p class="lead"> This is my first bitstarter project.</p>
+</div>
+</div>
+<div class ="row pitch">
+<div class="span6 video">
+Video
+</div>
+<div class="span6">
+<div class="thermometer">
+Thermometer
+</div>
+<div classs="order">
+Order
+</div>
+<div class = "social">
+Social
+</div>
+</div>
+</div>
+<div class="row section1">
+<div class="span12">
+Marketing Section 1
+</div>
+</div>
+<div class ="row section2">
+<div class="span12">
+Marketing Section 2
+</div>
+</div>
+<div class="row faq">
+<div class="span12">
+FAQ
+</div>
+</div>
+<div class = "row footer">
+<div class="span12">
+Footer
+</div>
+</div>
+</div>
+</body>
 </html>
+
+
 
 
