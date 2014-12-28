@@ -38,23 +38,26 @@ color: #FFFFFF;
 
 <body>
 <nav class = "navbar navbar-default">
-<div class="container-fluid">
-<div class="navbar-header">
-<a class="navbar-brand" href="#">
-<img alt="Brand" src="https://s3-us-west-1.amazonaws.com/shigu-quberr/IMAGES/Qube_logo.gif">
-</a>
+::before
+<div class = "navbar-header">
+::before
+<img alt="logo" class="navbar-brand" href="#" src="https://s3-us-west-1.amazonaws.com/shigu-quberr/IMAGES/Qube_logo.gif"
+::after
 </div>
-</div>
-</nav>
-
-
-<ul class = "nav nav-pills nav-justified">
-<li>
-<li role="presentation" class="active"> <a href="#">Home</a></li>
-<li role="presentation"><a href="#">Nav link </a></li>
-<li role="presentation"><a href="#">About</a></li>
-<li role="presentation"><a href="#">Contact Us</a></li>
+<ul class="nav navbar-nav navbar-right">
+::before
+<li class="active">
+<a href="#">Home</a>
+</li>
+<li class="hidden-sm">
+<a href="#about_anchor">ABOUT</a>
+</li>
+::after
 </ul>
+::after
+</div>
+
+
 
 <div class = "container">
 <div class = "text-center">
